@@ -1,0 +1,245 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif, sans-serif;
+}
+
+::-webkit-scrollbar {
+  background: transparent;
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.15);
+  background: rgb(255, 0, 0);
+  border-radius: 10px;
+}
+
+body {
+  background-color: rgb(255, 255, 255);
+  overflow-x: hidden;
+}
+
+.title {
+  font-size: max(3vw, 2.5rem);
+  font-weight: 500;
+  margin-bottom: 4vw;
+}
+
+main {
+  #section1 {
+    height: 100svh;
+    header {
+      position: relative;
+      z-index: 10000;
+      display: flex;
+      gap: 1.5rem;
+      justify-content: center;
+      align-items: center;
+      span {
+        font-size: 0.8rem;
+        svg {
+          margin-top: 0.3rem;
+        }
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+    #mainTitle {
+      font-weight: bold;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 6vw;
+      color: rgb(0, 0, 0);
+      width: 100vw;
+      text-align: center;
+      z-index: -1;
+      #left {
+        margin-right: 30vw;
+      }
+    }
+  }
+
+  #section2 {
+    position: relative;
+    height: 95svh;
+    padding: 2.5vw;
+    background: rgb(33, 33, 33);
+    background: linear-gradient(rgb(43, 43, 43) 0%, rgb(53, 53, 53) 8%, rgb(161, 161, 161) 100%);
+    z-index: -2;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    gap: 8vw;
+    font-size: 2.5vw;
+    font-weight: 500;
+    color: white;
+    .selected {
+      position: relative;
+      transform: scale(1.05);
+      text-decoration: underline;
+    }
+  }
+
+  #section3 {
+    position: relative;
+    z-index: 1000;
+    margin: 6.5vw;
+    #text {
+      font-size: max(3vw, 2.5rem);
+      font-weight: 500;
+      margin-bottom: 4vw;
+    }
+    #cards {
+      position: relative;
+      display: grid;
+      grid-template-columns: repeat(6, max(375px, 20vw));
+      gap: 1.2rem;
+      transition: 800ms ease-in-out;
+      .card {
+        padding: 1.5rem;
+        color: rgb(242, 248, 255);
+        border-radius: 1.8rem;
+        aspect-ratio: 6/11;
+        transition: 500ms;
+        &:nth-child(1) {
+          background: url(source/camera__exi2qfijti0y_large.jpg);
+        }
+        &:nth-child(2) {
+          background: url(source/battery__2v7w6kmztvm2_xlarge.jpg);
+        }
+        &:nth-child(3) {
+          color: rgb(32, 32, 32);
+          background: url(source/environment__e3v3gj88dl6q_xlarge.jpg);
+        }
+        &:nth-child(4) {
+          color: rgb(32, 32, 32);
+          background: url(source/innovation__os9bmmo3mjee_xlarge.jpg);
+        }
+        &:nth-child(5) {
+          background: url(source/privacy__ckc0wa30o55y_xlarge.jpg);
+        }
+        &:nth-child(6) {
+          background: url(source/safety__bwp7rsowtjiu_xlarge.jpg);
+        }
+        &:nth-child(n) {
+          background-size: cover;
+          background-position: center;
+        }
+        &:hover {
+          transform: scale(1.02);
+        }
+        p {
+          font-weight: 500;
+          font-size: 1.2rem;
+        }
+      }
+    }
+    #buttons {
+      display: flex;
+      justify-content: end;
+      gap: .5vw;
+      .button {
+        user-select: none;
+        cursor: pointer;
+        font-size: 2rem;
+        color: rgb(110, 110, 110);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: rgb(245, 245, 245);
+        border-radius: 50%;
+        margin-top: 2vw;
+        padding-bottom: .2vw;
+        width: 4vw;
+        aspect-ratio: 1/1;
+        transition: 200ms;
+        &:hover {
+          color: rgb(0, 0, 0);
+        }
+      }
+      #leftButton {
+        position: relative;
+        transform: rotate(180deg);
+      }
+      .disabled {
+        color: rgb(180, 180, 180);
+        &:hover {
+          color: rgb(180, 180, 180);
+          cursor: not-allowed;
+        }
+      }
+    }
+  }
+  #section4 {
+    background: rgb(245, 245, 245);
+    padding: 6.5vw;
+    #accessoriesCont {
+      display: flex;
+      gap: 1.2rem;
+      .accessories {
+        text-align: center;
+        padding: 3.5rem;
+        border-radius: 1.8rem;
+        width: 100%;
+        aspect-ratio: 6/5;
+        background: white;
+        h1 {
+          font-size: 1.6rem;
+          font-weight: 500;
+          margin-bottom: .6rem;
+        }
+        p {
+          font-size: 1.1rem;
+        }
+      }
+    }
+  }
+  canvas {
+    position: fixed;
+  }
+}
+
+@media (max-width: 1200px) {
+  main {
+    #section1 {
+      position: relative;
+      #title {
+        all: unset;
+        position: absolute;
+        bottom: 2vw;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 6vw;
+        font-weight: bold;
+        z-index: -1;
+        #left {
+          all: unset;
+        }
+        #right {
+          all: unset;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  main {
+    #section1 {
+      header {
+        display: none;
+      }
+    }
+  }
+}
+
+/*Ideas*/
+/*Make elements transition on visible by user*/
+/*Create magsafe charger/wallet/powerbank models and create second canvas and put the model into it and have it position in section5 with accesories*/
+/*ORRRR*/
+/*Create a photo of them and then just put them on top of the phone model lol*/

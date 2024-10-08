@@ -12,7 +12,6 @@
 
 ::-webkit-scrollbar-thumb {
   background: rgba(0, 0, 0, 0.15);
-  background: rgb(255, 0, 0);
   border-radius: 10px;
 }
 
@@ -65,23 +64,24 @@ main {
   }
 
   #section2 {
-    position: relative;
     height: 95svh;
-    padding: 2.5vw;
+    padding: 1.3vw;
     background: rgb(33, 33, 33);
     background: linear-gradient(rgb(43, 43, 43) 0%, rgb(53, 53, 53) 8%, rgb(161, 161, 161) 100%);
-    z-index: -2;
     display: flex;
     justify-content: center;
     align-items: end;
     gap: 8vw;
-    font-size: 2.5vw;
-    font-weight: 500;
+    font-size: 4vw;
     color: white;
-    .selected {
+    #changeMode {
+      padding-bottom: 1.05vw;
       position: relative;
-      transform: scale(1.05);
-      text-decoration: underline;
+      z-index: 10000000;
+      transition: 1s ease-out;
+      &:hover {
+        transform: rotate(360deg);
+      }
     }
   }
 
@@ -142,11 +142,11 @@ main {
     #buttons {
       display: flex;
       justify-content: end;
-      gap: .5vw;
+      gap: 0.5vw;
       .button {
         user-select: none;
         cursor: pointer;
-        font-size: 2rem;
+        font-size: 1.5rem;
         color: rgb(110, 110, 110);
         display: flex;
         justify-content: center;
@@ -154,7 +154,7 @@ main {
         background: rgb(245, 245, 245);
         border-radius: 50%;
         margin-top: 2vw;
-        padding-bottom: .2vw;
+        padding-bottom: 0.2vw;
         width: 4vw;
         aspect-ratio: 1/1;
         transition: 200ms;
@@ -191,7 +191,7 @@ main {
         h1 {
           font-size: 1.6rem;
           font-weight: 500;
-          margin-bottom: .6rem;
+          margin-bottom: 0.6rem;
         }
         p {
           font-size: 1.1rem;

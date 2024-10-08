@@ -118,6 +118,7 @@ camera.position.setZ(10);
 //Phone
 const iphoneSec1 = [0, 0, 0, 0, 3.14, 0, 70, 70, 70];
 const iphoneSec2 = [0, -14, 0, 0, 0, 0, 70, 70, 70];
+const iphoneSec2_1 = [0, -14, 0, 0, 3.14, 0, 70, 70, 70];
 const iphoneSec3 = [0, -28.5, -2, 0, 0, 0, 70, 70, 70];
 
 //Camera lines
@@ -143,6 +144,8 @@ const text3Sec1 = [-24.35, -13.9, 0.5, 0, 0, 0, 1, 1, 1];
 const text1Sec2 = [-4.7, -8.85, 0.5, 0, 0, 0, 1, 1, 1];
 const text2Sec2 = [0.5, -9.5, 0.5, 0, 0, 0, 1, 1, 1];
 const text3Sec2 = [-4.6, -11.58, 0.5, 0, 0, 0, 1, 1, 1];
+
+//Display lines
 
 //!Event listeners
 window.addEventListener("scroll", () => {
@@ -193,16 +196,29 @@ function setModelTo() {
     changeModelInfo(text3, text3Sec1, 1.69);
     pointLight.position.set(15, 15, 30);
   } else if (window.scrollY / window.innerHeight < 1.15) {
-    changeModelInfo(iphone, iphoneSec2, 1.5);
-    changeModelInfo(cube1, cube1Sec2, 1.69);
-    changeModelInfo(cube2, cube2Sec2, 1.69);
-    changeModelInfo(cube3, cube3Sec2, 1.69);
-    changeModelInfo(cube4, cube4Sec2, 1.69);
-    changeModelInfo(cube5, cube5Sec2, 1.69);
-    changeModelInfo(cube6, cube6Sec2, 1.69);
-    changeModelInfo(text1, text1Sec2, 1.69);
-    changeModelInfo(text2, text2Sec2, 1.69);
-    changeModelInfo(text3, text3Sec2, 1.69);
+    if (!sec2Mode) {
+      changeModelInfo(iphone, iphoneSec2, 1.5);
+      changeModelInfo(cube1, cube1Sec2, 1.69);
+      changeModelInfo(cube2, cube2Sec2, 1.69);
+      changeModelInfo(cube3, cube3Sec2, 1.69);
+      changeModelInfo(cube4, cube4Sec2, 1.69);
+      changeModelInfo(cube5, cube5Sec2, 1.69);
+      changeModelInfo(cube6, cube6Sec2, 1.69);
+      changeModelInfo(text1, text1Sec2, 1.69);
+      changeModelInfo(text2, text2Sec2, 1.69);
+      changeModelInfo(text3, text3Sec2, 1.69);
+    } else {
+      changeModelInfo(iphone, iphoneSec2_1, 1.5);
+      changeModelInfo(cube1, cube1Sec1, 1.69);
+      changeModelInfo(cube2, cube2Sec1, 1.69);
+      changeModelInfo(cube3, cube3Sec1, 1.69);
+      changeModelInfo(cube4, cube4Sec1, 1.69);
+      changeModelInfo(cube5, cube5Sec1, 1.69);
+      changeModelInfo(cube6, cube6Sec1, 1.69);
+      changeModelInfo(text1, text1Sec1, 1.69);
+      changeModelInfo(text2, text2Sec1, 1.69);
+      changeModelInfo(text3, text3Sec1, 1.69);
+    }
     pointLight.position.set(-8, -12, 30);
   }
 }
@@ -229,8 +245,13 @@ function cardsMovement(scrollRight) {
   document.getElementById("cards").style.transform = "translateX(" + -currentCardsDistance + "px)";
 }
 
+let sec2Mode = 0;
 document.getElementById("rightButton").addEventListener("click", () => cardsMovement(true));
 document.getElementById("leftButton").addEventListener("click", () => cardsMovement(false));
+document.getElementById("changeMode").addEventListener("click", () => {
+  sec2Mode ? (sec2Mode = 0) : (sec2Mode = 1);
+  setModelTo();
+});
 
 animate();
 setModelTo();

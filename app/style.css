@@ -65,7 +65,7 @@ main {
 
   #section2 {
     height: 95svh;
-    padding: 1.3vw;
+    padding: .6vw;
     background: rgb(33, 33, 33);
     background: linear-gradient(rgb(43, 43, 43) 0%, rgb(53, 53, 53) 8%, rgb(161, 161, 161) 100%);
     display: flex;
@@ -75,10 +75,12 @@ main {
     font-size: 4vw;
     color: white;
     #changeMode {
-      padding-bottom: 1.05vw;
+      padding-bottom: .5vw;
       position: relative;
       z-index: 10000000;
       transition: 1s ease-out;
+      user-select: none;
+      cursor: pointer;
       &:hover {
         transform: rotate(360deg);
       }

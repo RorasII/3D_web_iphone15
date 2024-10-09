@@ -65,7 +65,7 @@ main {
 
   #section2 {
     height: 95svh;
-    padding: .6vw;
+    padding: 0.6vw;
     background: rgb(33, 33, 33);
     background: linear-gradient(rgb(43, 43, 43) 0%, rgb(53, 53, 53) 8%, rgb(161, 161, 161) 100%);
     display: flex;
@@ -75,7 +75,7 @@ main {
     font-size: 4vw;
     color: white;
     #changeMode {
-      padding-bottom: .5vw;
+      padding-bottom: 0.5vw;
       position: relative;
       z-index: 10000000;
       transition: 1s ease-out;
@@ -90,7 +90,8 @@ main {
   #section3 {
     position: relative;
     z-index: 1000;
-    margin: 6.5vw;
+    padding: 6.5vw;
+    overflow-x: hidden;
     #text {
       font-size: max(3vw, 2.5rem);
       font-weight: 500;
@@ -188,7 +189,7 @@ main {
         padding: 3.5rem;
         border-radius: 1.8rem;
         width: 100%;
-        aspect-ratio: 6/5;
+        aspect-ratio: 6/7; /*AR: 6/5*/
         background: white;
         h1 {
           font-size: 1.6rem;

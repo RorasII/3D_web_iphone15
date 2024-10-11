@@ -65,17 +65,16 @@ main {
 
   #section2 {
     height: 95svh;
-    padding: .6vw;
+    padding: .6vh;
     background: rgb(33, 33, 33);
-    background: linear-gradient(rgb(43, 43, 43) 0%, rgb(53, 53, 53) 8%, rgb(161, 161, 161) 100%);
+    background: linear-gradient(rgb(63, 63, 63) 0%, rgb(75, 75, 75) 8%, rgb(180, 180,180) 100%);
     display: flex;
     justify-content: center;
     align-items: end;
-    gap: 8vw;
-    font-size: 4vw;
+    font-size: 8vh;
     color: white;
     #changeMode {
-      padding-bottom: .5vw;
+      padding-bottom: 1.1vh;
       position: relative;
       z-index: 10000000;
       transition: 1s ease-out;
@@ -88,9 +87,10 @@ main {
   }
 
   #section3 {
+    overflow-x: hidden;
     position: relative;
     z-index: 1000;
-    margin: 6.5vw;
+    padding: 6.5vw;
     #text {
       font-size: max(3vw, 2.5rem);
       font-weight: 500;
@@ -99,7 +99,7 @@ main {
     #cards {
       position: relative;
       display: grid;
-      grid-template-columns: repeat(6, max(375px, 20vw));
+      grid-template-columns: repeat(6, max(350px, 20vw));
       gap: 1.2rem;
       transition: 800ms ease-in-out;
       .card {
@@ -157,7 +157,7 @@ main {
         border-radius: 50%;
         margin-top: 2vw;
         padding-bottom: 0.2vw;
-        width: 4vw;
+        width: max(4rem, 4vw);
         aspect-ratio: 1/1;
         transition: 200ms;
         &:hover {
@@ -210,7 +210,7 @@ main {
   main {
     #section1 {
       position: relative;
-      #title {
+      #mainTitle {
         all: unset;
         position: absolute;
         bottom: 2vw;

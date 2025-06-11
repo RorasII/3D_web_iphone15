@@ -37,9 +37,9 @@ camera.position.setZ(10);
 
 //!Position x,y,z Rotation, x,y,z Scale x,y,z
 //Phone
-const iphoneSec1 = [0, 0, 0, 0, 3.14, 0, 70, 70, 70];
-const iphoneSec2 = [0, -14, 0, 0, 0, 0, 70, 70, 70];
-const iphoneSec2_1 = [0, -14, 0, 0, 3.14, 0, 70, 70, 70];
+const iphoneSec1 = [0, 0, 0, 0, 3.14, 0, 70, 70, 70]; //[0, 0, 0, 0, 3.14, 0, 70, 70, 70];
+const iphoneSec2 = [3, -14, 0, -0.2, 2.5, 0.2, 70, 70, 70]; //[0, -14, 0, 0, 0, 0, 70, 70, 70];
+const iphoneSec2_1 = [3, -14, 0, 0, 20000.8, -1.57, 70, 70, 70]; //[0, -14, 0, 0, 0, 0, 70, 70, 70];
 const iphoneSec3 = [0, -48.5, -2, 0, 0, 0, 70, 70, 70];
 
 //!Event listeners
@@ -83,17 +83,17 @@ function setModelTo() {
     changeModelInfo(iphone, iphoneSec1, 1.5);
     //Light
     pointLight.position.set(15, 15, 30);
-  } else /*if (window.scrollY / window.innerHeight < 1.15)*/ {
+  } /*if (window.scrollY / window.innerHeight < 1.15)*/ else {
     if (!sec2Mode) {
       changeModelInfo(iphone, iphoneSec2, 1.5);
       //Light
       pointLight.position.set(-8, -12, 30);
-  } else {
+    } else {
       changeModelInfo(iphone, iphoneSec2_1, 1.5);
       //Light
       pointLight.position.set(15, -12, 30);
     }
-  } 
+  }
 }
 
 let currentCardsDistance = 0;
@@ -121,10 +121,10 @@ function cardsMovement(scrollRight) {
 let sec2Mode = 0;
 document.getElementById("rightButton").addEventListener("click", () => cardsMovement(true));
 document.getElementById("leftButton").addEventListener("click", () => cardsMovement(false));
-document.getElementById("changeMode").addEventListener("click", () => {
+document.getElementById("section2").addEventListener("click", () => {
   sec2Mode ? (sec2Mode = 0) : (sec2Mode = 1);
-  setModelTo()
-  //gsap.to(iphone.rotation, { y: iphone.rotation.y + Math.PI, duration: 1, });
+  setModelTo();
+  // gsap.to(iphone.rotation, { y: iphone.rotation.y + Math.PI, duration: 1 });
 });
 
 animate();

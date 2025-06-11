@@ -65,24 +65,18 @@ main {
 
   #section2 {
     height: 95svh;
-    padding: .6vh;
-    background: rgb(201,217,255);
-    background: linear-gradient(0deg, rgba(201,217,255,1) 0%, rgba(96,136,255,1) 100%);
+    padding: 0.6vh;
+    background: rgb(2, 0, 36);
+    background: linear-gradient(90deg, rgb(3, 0, 55) 0%, rgba(9, 9, 121, 1) 55%, rgb(0, 50, 120) 100%);
     display: flex;
-    justify-content: center;
-    align-items: end;
-    font-size: 8vh;
+    font-size: 3vh;
     color: white;
-    #changeMode {
-      padding-bottom: 1.1vh;
-      position: relative;
-      z-index: 10000000;
-      transition: 1s ease-out;
-      user-select: none;
-      cursor: pointer;
-      &:hover {
-        transform: rotate(360deg);
-      }
+    #specs {
+      line-height: 1.8;
+      padding: 2rem;
+    }
+    #camera {
+      display: none;
     }
   }
 
@@ -217,7 +211,7 @@ main {
               animation: magsafeWallet 20s ease-in-out 0s infinite;
             }
             &:nth-child(2) {
-              transform: translate(-250%, -23%) scale(.9);
+              transform: translate(-250%, -23%) scale(0.9);
               animation: magsafeCharger 20s ease-in-out 10s infinite;
             }
           }
@@ -232,16 +226,16 @@ main {
             background-size: contain;
             background-repeat: no-repeat;
             background-position: center;
-            transform: scale(.4);
+            transform: scale(0.4);
             animation: airtagFloating 2s ease-in-out backwards infinite;
           }
           #shadow {
             position: relative;
             top: -28%;
             height: 10%;
-            transform: scale(.3);
+            transform: scale(0.3);
             background-color: black;
-            opacity: .2;
+            opacity: 0.2;
             border-radius: 50%;
             animation: airtagShadow 2s ease-in-out backwards infinite;
             box-shadow: 0 0 10px 20px black;
@@ -256,33 +250,35 @@ main {
   }
   canvas {
     position: fixed;
+    pointer-events: none;
+    user-select: none;
   }
 }
 
 @keyframes airtagShadow {
   0% {
-    transform: scale(.3);
-    opacity: .25;
+    transform: scale(0.3);
+    opacity: 0.25;
   }
   50% {
-    transform: scale(.2);
-    opacity: .2;
+    transform: scale(0.2);
+    opacity: 0.2;
   }
   100% {
-    transform: scale(.3);
-    opacity: .25;
+    transform: scale(0.3);
+    opacity: 0.25;
   }
 }
 
 @keyframes airtagFloating {
   0% {
-    transform: scale(.4) translateY(10%);
+    transform: scale(0.4) translateY(10%);
   }
   50% {
-    transform: scale(.4) translateY(-10%);
+    transform: scale(0.4) translateY(-10%);
   }
   100% {
-    transform: scale(.4) translateY(10%);
+    transform: scale(0.4) translateY(10%);
   }
 }
 
@@ -297,22 +293,22 @@ main {
     transform: translate(-50%, -45%) scale(1.1);
   }
   100% {
-    transform: translate(150%, -45%) scale(1.1);
+    transform: translate(250%, -45%) scale(1.1);
   }
 }
 
 @keyframes magsafeCharger {
   0% {
-    transform: translate(-250%, -23%) scale(.9);
+    transform: translate(-250%, -23%) scale(0.9);
   }
   30% {
-    transform: translate(-50%, -23%) scale(.9);
+    transform: translate(-50%, -23%) scale(0.9);
   }
   50% {
-    transform: translate(-50%, -23%) scale(.9);
+    transform: translate(-50%, -23%) scale(0.9);
   }
   100% {
-    transform: translate(150%, -23%) scale(.9);
+    transform: translate(250%, -23%) scale(0.9);
   }
 }
 

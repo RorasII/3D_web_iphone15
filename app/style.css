@@ -66,8 +66,7 @@ main {
   #section2 {
     height: 95svh;
     padding: 0.6vh;
-    background: rgb(2, 0, 36);
-    background: linear-gradient(90deg, rgb(3, 0, 55) 0%, rgba(9, 9, 121, 1) 55%, rgb(0, 50, 120) 100%);
+    background: #374a64;
     display: flex;
     font-size: 3vh;
     color: white;
